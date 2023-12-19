@@ -1,0 +1,31 @@
+<mat-card class="crear-cliente-card">
+    <span class="form-title">Crear nuevo cliente</span>
+    <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()" class="crear-cliente-form">
+        <mat-form-field class="crear-cliente-field">
+            <mat-label>Nombre del cliente</mat-label>
+            <input matInput formControlName="nombres">
+            <mat-error *ngIf="clienteForm.get('nombres')">Nombre es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="crear-cliente-field">
+            <mat-label>Apellidos del cliente</mat-label>
+            <input matInput formControlName="apellidos">
+            <mat-error *ngIf="clienteForm.get('apellidos')">Apellidos son requeridos</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="crear-cliente-field">
+            <mat-label>Dirección del cliente</mat-label>
+            <input matInput formControlName="direccion">
+            <mat-error *ngIf="clienteForm.get('direccion')">Dirección es requerida</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="crear-cliente-field">
+            <mat-label>Teléfono del cliente</mat-label>
+            <input matInput formControlName="telefono">
+            <mat-error *ngIf="clienteForm.get('telefono')">Teléfono es requerido</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button [disabled]="!clienteForm.valid">Crear nuevo</button>
+    </form>
+</mat-card>
+<br><br><br><br><br>

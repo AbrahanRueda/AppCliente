@@ -1,0 +1,28 @@
+
+.custom-card {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+}
+
+.mat-elevation-z8 {
+    width: 100%;
+    background-color: white;
+    color: black;
+}
+
+.paginator {
+    margin-top: 20px;
+}
+.textN{
+    color: black;
+}
+.action-button {
+    margin-right: 10px;
+}
+.odd-row {
+    background-color: rgb(207, 255, 203);
+}

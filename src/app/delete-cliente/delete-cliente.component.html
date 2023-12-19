@@ -1,0 +1,30 @@
+<div class="contenedor">
+<mat-card class="custom-card">
+    <mat-card-footer>
+        <mat-card-title>¿Estás seguro de eliminar este cliente?</mat-card-title>
+    </mat-card-footer>
+
+    <mat-card-content>
+        <mat-list>
+            <b>Nombre: {{cliente.nombres}}</b>
+        </mat-list>
+
+        <mat-list>
+            <b>Apellidos: {{cliente.apellidos}}</b>
+        </mat-list>
+
+        <mat-list>
+            <b>Dirección: {{cliente.direccion}}</b>
+        </mat-list>
+
+        <mat-list>
+            <b>Teléfono: {{cliente.telefono}}</b>
+        </mat-list>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-flat-button class="cancel-button" (click)="cancel()">Cancelar</button>
+        <button mat-raised-button color="warn" class="confirm-button" (click)="confirmar()">Confirmar</button>
+    </mat-card-actions>
+</mat-card>
+</div>

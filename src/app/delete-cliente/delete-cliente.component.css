@@ -1,0 +1,46 @@
+.contenedor {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+.custom-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    background-color: #ffffff;
+    max-width: 400px;
+}
+
+.mat-card-title {
+    text-align: center;
+    font-size: 18px;
+}
+
+.mat-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cancel-button {
+    color: #fff;
+    background-color: #40f157;
+}
+
+.cancel-button:hover {
+    background-color: #ddd;
+}
+
+.confirm-button {
+    color: #fff;
+    background-color: #d9534f;
+    margin-left: 16px;
+}
+
+.confirm-button:hover {
+    background-color: #e56b60;
+}

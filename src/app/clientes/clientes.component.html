@@ -1,0 +1,41 @@
+<mat-card class="custom-card">
+<mat-form-field *ngIf="dataSource" appearance="fill" class="filter-field" >
+    <mat-label style="color: white;">Buscar</mat-label>
+    <input matInput (keyup)="aplicarFiltro($event)" placeholder="Escribe para buscar" autocomplete="off">
+    <mat-icon matSuffix  style="color: white;">search</mat-icon>
+</mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<ng-container matColumnDef="nombres">
+    <th mat-header-cell *matHeaderCellDef class="textN"> Nombres </th>
+    <td mat-cell *matCellDef="let element let odd = odd" [class.odd-row]="odd" class="textN"> {{element.nombres}} </td>
+</ng-container>
+<ng-container matColumnDef="apellidos">
+    <th mat-header-cell *matHeaderCellDef class="textN"> Apellidos </th>
+    <td mat-cell *matCellDef="let element element let odd = odd" [class.odd-row]="odd"  class="textN"> {{element.apellidos}} </td>
+</ng-container>
+<ng-container matColumnDef="direccion">
+    <th mat-header-cell *matHeaderCellDef class="textN" > Direccion </th>
+    <td mat-cell *matCellDef="let element element let odd = odd" [class.odd-row]="odd"  class="textN"> {{element.direccion}} </td>
+</ng-container>
+<ng-container matColumnDef="telefono">
+    <th mat-header-cell *matHeaderCellDef class="textN"> Telefono </th>
+    <td mat-cell *matCellDef="let element element let odd = odd" [class.odd-row]="odd"  class="textN"> {{element.telefono}} </td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+<ng-container matColumnDef="Acciones">
+    <th mat-header-cell *matHeaderCellDef class="textN" >Acciones</th>
+    <td mat-cell *matCellDef="let element"  class="textN">
+        <button (click)="actualizarCliente(element)" mat-raised-button color="primary" class="action-button">
+            <mat-icon color="white">edit</mat-icon> <b> Editar</b>
+        </button>
+        <button [routerLink]="'/delete-cliente/' + element.id" mat-raised-button color="warn" class="action-button">
+            <mat-icon color="white">delete</mat-icon> <b>Eliminar</b>
+        </button>
+    </td>
+</ng-container>
+    </table>
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5,10,25,100]" class="paginator"></mat-paginator>
+</mat-card>

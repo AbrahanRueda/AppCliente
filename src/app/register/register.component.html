@@ -1,0 +1,16 @@
+<mat-card class="custom-card">
+    <span class="title">Crear nueva cuenta</span>
+    <br>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-container">
+        <mat-form-field class="input-field">
+            <input matInput placeholder="Nombre de usuario" formControlName="userName" class="white-input">
+        </mat-form-field>
+        <mat-form-field class="input-field">
+            <input matInput placeholder="Contraseña" type="password" formControlName="password" class="white-input">
+        </mat-form-field>
+        <button mat-raised-button color="warn" [disabled]="!registerForm.valid" class="red-button">Registrarse</button>
+    </form>
+</mat-card>
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
